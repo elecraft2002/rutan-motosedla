@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+html {
+  font-family: "Roboto", sans-serif;
+  --white: white;
+  --black: black;
+  --yellow: #ffe303;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  overflow-x: hidden;
+}
+
+/* Underline*/
+a {
+    display: inline-block;
+    position: relative;
+    color: var(--black);
+  }
+  
+  a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--black);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .noUnderline:hover:after {
+    transform: scaleX(0);
+  }

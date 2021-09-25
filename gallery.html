@@ -1,0 +1,107 @@
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="./styles/nav.css">
+    <link rel="stylesheet" href="./styles/gallery.css">
+    <script src="https://kit.fontawesome.com/7a91434f52.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <nav class="navigation navigation-top">
+        <div class="navigation__row">
+            <a class="noUnderline" href="./index.php">
+                <figure class="navigation__logo">
+                    <img src="./imgs/logo.svg" alt="logo">
+                </figure>
+            </a>
+            <a href="javascript:void(0)" class="hamburger hamburger-btn hamburger-zone">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <ul class="hamburger-zone">
+            <li><a href="./gallery.php">Galerie</a></li>
+            <li><a href="">Link 2</a></li>
+            <li><a href="">Link 3</a></li>
+        </ul>
+    </nav>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let hamelmnts = document.querySelectorAll(".hamburger-zone");
+            for (const btn of document.querySelectorAll(".hamburger-btn")) {
+                btn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    for (const element of hamelmnts) {
+                        element.classList.toggle("active");
+                    }
+                });
+            }
+        });
+    </script>
+    <main>
+        <div class="controlls">
+            <div class="folder__container">
+                <h1>Rutan performance sedla</h1>
+                <ul class="folder__container">
+                    <li class="folder__root">
+                        <a class="root__file" href="link">File1</a><i class="fas fa-angle-right"></i>
+                    </li>
+                    <li class="folder__root">
+                        <a class="root__file" href="link">File2</a><i class="fas fa-angle-right"></i>
+                    </li>
+                    <li class="folder__root">
+                        <a class="root__file" href="link">File3</a><i class="fas fa-angle-right"></i>
+                    </li>
+                </ul>
+                <h2 class="folder__dir">Jméno složky</h2>
+                <ul class="folders">
+                    <li class="folders__button">
+                        <a class="folders__text noUnderline" href="./dsa">Jamaha</a>
+                    </li>
+                    <li class="folders__button">
+                        <a class="folders__text noUnderline" href="./dsa">Jamaha</a>
+                    </li>
+                    <li class="folders__button">
+                        <a class="folders__text noUnderline" href="./dsa">Jamaha</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="items__container">
+            <ul class="items">
+                <li class="item">
+                    <h3 class="item__name"><a href="link">Název produktu</a></h3>
+                    <figure>
+                        <img class="item__img"
+                            src="https://drive.google.com/uc?id=1JcFifijmV_nBBAUzRvcCqume2G2EWvwo&export=download"
+                            alt="">
+                    </figure>
+                    <div class="item__info">
+                        <div class="item--row">
+                            <p class="item__price">ab 178 EUR</p>
+                            <a class="item__button noUnderline" href="link">ANFRAGE</a>
+                        </div>
+                        <p class="item__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                            quasi, nemo, inventore cupiditate praesentium sed, cumque laudantium sint debitis vel
+                            dolorem. Totam quia nostrum ea corporis consectetur in praesentium suscipit!</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="pages">
+            <a class="pages__button noUnderline" href="pages__button noUnderline"><i class="fas fa-angle-left"></i>Vorherige Seite</a>
+            <a class="pages__button noUnderline" href="pages__button noUnderline">Nächste Seite<i class="fas fa-angle-right"></i></a>
+        </div>
+    </main>
+
+
+</body>
+
+</html>

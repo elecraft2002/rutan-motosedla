@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+html {
+  font-family: "Roboto", sans-serif;
+  --white: white;
+  --black: black;
+  --yellow: #ffe303;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.folders {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.folders__button {
+  margin: 1rem;
+  color: var(--black);
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 5px;
+  font-weight: 500;
+  transition: 0.5s;
+  /* filter: drop-shadow(0px 0px 5px black); */
+}
+.folders__button:hover,
+.folders__button:hover .folders__text {
+  color: var(--white);
+  background: var(--black);
+}
+.folders__text {
+  display: block;
+  padding: 1rem 2rem;
+  transition: 0.5s;
+}
+
+main {
+  margin: 1rem;
+  margin-top: 90px;
+}
+h1 {
+  position: absolute;
+  left: -99999;
+}
+
+.folder__dir {
+  margin: 1rem;
+  text-transform: uppercase;
+}
+
+.folder__root {
+  display: inline;
+}
+.folder__root i {
+  color: var(--yellow);
+}
+.root__file {
+  color: rgb(97, 97, 97);
+  padding: 0.5rem;
+}
+.root__file:hover {
+  color: var(--black);
+}
+
+.folder__root:last-child i::before {
+  display: none;
+}
+
+@media screen and (min-width: 1250px) {
+  main {
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 90px;
+  }
+}
+.folder__container {
+  margin-left: 1rem;
+}
+
+/* Underline*/
+a {
+  display: inline-block;
+  position: relative;
+  color: var(--black);
+}
+
+a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--black);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.noUnderline:hover:after {
+  transform: scaleX(0);
+}
+
+.item {
+  max-width: 360px;
+  padding: 1rem;
+  background: var(--white);
+  border-radius: 2rem;
+  transition: 0.5s;
+}
+
+.item:hover {
+  z-index: 10;
+  transform: scale(1.02);
+}
+
+.item__img {
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.item__name {
+  text-align: center;
+  text-transform: uppercase;
+}
+.item__price {
+  color: green;
+  font-weight: 900;
+}
+
+.item__button {
+  font-weight: 500;
+  padding: 1rem 2rem;
+  background: var(--yellow);
+  border-radius: 5px;
+  filter: drop-shadow(3px 3px 0px #b8a200);
+  transition: 0.5s;
+}
+.item__button:hover {
+  color: var(--white);
+  filter: drop-shadow(3px 3px 0px rgb(0, 61, 0));
+  background: green;
+}
+.item--row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.items__container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.items .img__container {
+  margin: 1rem 0px;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+.item__description {
+  text-align: center;
+}
+.pages {
+  display: flex;
+  justify-content: center;
+}
+.pages__button {
+  margin: 1rem;
+  padding: 1rem 2rem;
+  color: var(--black);
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 5px;
+  font-weight: 500;
+  transition: 0.5s;
+}
+.pages__button i {
+  margin: 0 0.5rem;
+}
+
+.pages__button.pages__button--inactive {
+  color: gray;
+  border: 2px solid gray;
+  cursor: auto;
+}
+
+.pages__button.pages__button--active:hover {
+  background: var(--black);
+  color: var(--white);
+}
