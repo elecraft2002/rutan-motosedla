@@ -4,32 +4,32 @@ $error = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // collect value of input field
     $array = json_decode($_REQUEST["array"]);
-    $array = json_decode($_REQUEST["array"]);
-    $roots = json_decode($_REQUEST["roots"]);
-
+    $photos = [];
+    $imageNames = [];
     if (!empty($array)) {
 
         $sql = $conn->prepare("DELETE FROM `data`");
         $sql->execute();
-        $sql = $conn->prepare("INSERT INTO data (root, name,folderName, url) VALUES (?,?,?,?)");
+        $sql = $conn->prepare("INSERT INTO data (id, root, name,folderName, url) VALUES (?,?,?,?,?)");
         for ($i = 0; $i < count($array); $i++) {
-            $sql->bind_param("ssss", $root, $name, $folderName, $url);
+            $sql->bind_param("issss", $i, $root, $name, $folderName, $url);
             $root = $array[$i][0];
             $name = $array[$i][1];
-            $folderName = $array[$i][2];
-            $parentName = //$array[$i][3];
+            $nameWithType = $array[$i][2];
+            $folderName = $array[$i][3];
             $url = $array[$i][4] . "&export=download";
             $sql->execute();
+            $imageName = "$folderName-$nameWithType";
+            array_push($imageNames, $imageName);
+            array_push($photos, $url);
         }
-/*         $sql = $conn->prepare("DELETE FROM `roots`");
-        $sql->execute();
-        $sql = $conn->prepare("INSERT INTO roots (root, folderName, parentName) VALUES (?,?,?)");
-        for ($i = 0; $i < count($roots); $i++) {
-            $sql->bind_param("sss", $root, $folderName, $parentName);
-            $root = $roots[$i][0];
-            $folderName = $roots[$i][1];
-            $parentName = $roots[$i][2];
-            $sql->execute();
-        } */
+    }
+    for ($i = 0; $i < count($photos); $i++) {
+        $imageNameSearch = $imagenames[$i];
+        if (!file_exists(__DIR__ . "imgs/resized/$imageNameSearch")) {
+            $resize = new ResizeImage($photos[$i]);
+            $resize->resizeTo(100, 100, "maxWidth");
+            $resize->saveImage(__DIR__ . "imgs/resized/$imageNameSearch");
+        }
     }
 }
