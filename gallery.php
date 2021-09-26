@@ -76,10 +76,17 @@ function searchItems($conn, $search)
             $model[strlen($model) - 1] = " ";
             $model = str_replace("/", " - ", $model);
             $name = $row["name"];
-            $url = $row["url"];
             $id = $row["id"];
             $description = "Sattel für $model ab 199 euro!";
             $link = "product.php?search=$search&page=$page&id=$id";
+
+            $nameWithType = $row["nameWithType"];
+            $folderName = $row["folderName"];
+            $url = __DIR__ . "/imgs/resized/" . "$folderName-$nameWithType";
+
+            if (!file_exists($url)) {
+                $url = $row["url"];
+            }
 
             $out .=                '<li class="item">
             <h3 class="item__name"><a href="' . $link . '">' . $name . '</a></h3>
@@ -106,7 +113,7 @@ function nextPage($conn, $search)
     $page = 0;
     if (!empty($_GET["page"]) && is_numeric($_GET["page"]))
         $page = $_GET["page"];
-    $offset = $page * $itemnum;
+    $offset = $page * $itemnum + $itemnum;
     $sql = "SELECT root FROM data WHERE root LIKE '%$search%'";
     $result = $conn->query($sql);
     if ($result->num_rows > $offset) {

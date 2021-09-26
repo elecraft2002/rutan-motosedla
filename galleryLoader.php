@@ -1,7 +1,10 @@
 <?php
 require_once("./php/config.php");
+require __DIR__ . "/php/resizeImg.php";
 $error = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //max_execution_time = 3600;
+    set_time_limit(3600);
     // collect value of input field
     $array = json_decode($_REQUEST["array"]);
     $photos = [];
@@ -10,9 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $sql = $conn->prepare("DELETE FROM `data`");
         $sql->execute();
-        $sql = $conn->prepare("INSERT INTO data (id, root, name,folderName, url) VALUES (?,?,?,?,?)");
+        $sql = $conn->prepare("INSERT INTO data (id, root, name,folderName, url,nameWithType) VALUES (?,?,?,?,?,?)");
         for ($i = 0; $i < count($array); $i++) {
-            $sql->bind_param("issss", $i, $root, $name, $folderName, $url);
+            $sql->bind_param("isssss", $i, $root, $name, $folderName, $url, $nameWithType);
             $root = $array[$i][0];
             $name = $array[$i][1];
             $nameWithType = $array[$i][2];
@@ -25,11 +28,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     for ($i = 0; $i < count($photos); $i++) {
-        $imageNameSearch = $imagenames[$i];
-        if (!file_exists(__DIR__ . "imgs/resized/$imageNameSearch")) {
-            $resize = new ResizeImage($photos[$i]);
-            $resize->resizeTo(100, 100, "maxWidth");
-            $resize->saveImage(__DIR__ . "imgs/resized/$imageNameSearch");
+        $fileRoot = __DIR__ . "/imgs/original/" . $imageNames[$i];
+        if (!file_exists($fileRoot)) {
+            save_image($photos[$i], $fileRoot);
+            $resize = new ResizeImage($fileRoot);
+            $resize->resizeTo(360, 360, "maxWidth");
+            $resize->saveImage(__DIR__ . "/imgs/resized/" . $imageNames[$i], 75);
         }
     }
+}
+function save_image($inPath, $outPath)
+{ //Download images from remote server
+    $in =    fopen($inPath, "rb");
+    $out =   fopen($outPath, "wb");
+    while ($chunk = fread($in, 8192)) {
+        fwrite($out, $chunk, 8192);
+    }
+    fclose($in);
+    fclose($out);
 }

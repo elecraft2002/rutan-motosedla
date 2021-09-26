@@ -36,3 +36,10 @@ a {
   .noUnderline:hover:after {
     transform: scaleX(0);
   }
+
+  main {
+    margin-top: 90px;
+  }
+  .folder__container {
+    margin-left: 1rem;
+  }

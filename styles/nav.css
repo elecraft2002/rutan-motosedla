@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.navigation a {
+  text-decoration: none;
+}
+
 .navigation__logo img {
   height: 70%;
   width: 100%;
