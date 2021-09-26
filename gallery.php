@@ -86,6 +86,9 @@ function searchItems($conn, $search)
 
             if (!file_exists($url)) {
                 $url = $row["url"];
+            } else {
+                //$url = __DIR__ . "/imgs/resized/" . "$folderName-$nameWithType";
+                $url = "./imgs/resized/" . "$folderName-$nameWithType";
             }
 
             $out .=                '<li class="item">

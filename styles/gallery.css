@@ -46,6 +46,12 @@ ul {
   padding: 1rem 2rem;
   transition: 0.5s;
 }
+@media screen and (max-width: 600px) {
+  .folders__text {
+    display: block;
+    padding: .5rem .5rem;
+  }
+}
 
 main {
   margin: 1rem;
