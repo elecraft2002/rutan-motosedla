@@ -1,0 +1,5 @@
+Galerie done
+Ceny done
+PHP mailer
+formulář
+kontakt

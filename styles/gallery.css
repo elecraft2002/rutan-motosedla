@@ -59,7 +59,7 @@ main {
 }
 h1 {
   position: absolute;
-  left: -99999;
+  left: -99999px;
 }
 
 .folder__dir {

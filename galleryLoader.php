@@ -15,27 +15,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql->execute();
         $sql = $conn->prepare("INSERT INTO data (id, root, name,folderName, url,nameWithType) VALUES (?,?,?,?,?,?)");
         for ($i = 0; $i < count($array); $i++) {
-            $sql->bind_param("isssss", $i, $root, $name, $folderName, $url, $nameWithType);
+            $sql->bind_param("ssssss", $id, $root, $name, $folderName, $url, $nameWithType);
             $root = $array[$i][0];
             $name = $array[$i][1];
             $nameWithType = $array[$i][2];
             $folderName = $array[$i][3];
             $url = $array[$i][4] . "&export=download";
+            $id = $array[$i][5];
             $sql->execute();
             $imageName = "$folderName-$nameWithType";
             array_push($imageNames, $imageName);
             array_push($photos, $url);
         }
-    }
-    for ($i = 0; $i < count($photos); $i++) {
-        $fileRoot = __DIR__ . "/imgs/original/" . $imageNames[$i];
-        if (!file_exists($fileRoot)) {
-            save_image($photos[$i], $fileRoot);
-            $resize = new ResizeImage($fileRoot);
-            $resize->resizeTo(360, 360, "maxWidth");
-            $resize->saveImage(__DIR__ . "/imgs/resized/" . $imageNames[$i], 75);
+
+        for ($i = 0; $i < count($photos); $i++) {
+            $fileRoot = __DIR__ . "/imgs/original/" . $imageNames[$i];
+            if (!file_exists($fileRoot)) {
+                save_image($photos[$i], $fileRoot);
+                $resize = new ResizeImage($fileRoot);
+                $resize->resizeTo(360, 360, "maxWidth");
+                $resize->saveImage(__DIR__ . "/imgs/resized/" . $imageNames[$i], 75);
+            }
         }
     }
+
 }
 function save_image($inPath, $outPath)
 { //Download images from remote server

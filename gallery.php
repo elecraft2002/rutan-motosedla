@@ -44,8 +44,8 @@ function searchFolders($conn, $search)
                 //$out .= '<a href="gallery.php?search=' . $link . '/">';
                 //$out .= "$array[$i]</a><br>";
                 $out .=                     '<li class="folders__button">
-            <a class="folders__text noUnderline" href="gallery.php?search=' . $link . '/">' . $array[$i] . '</a>
-        </li>';
+<a class="folders__text noUnderline" href="gallery.php?search=' . $link . '/">' . $array[$i] . '</a>
+</li>';
             }
         }
         return $out;
@@ -64,7 +64,6 @@ function searchItems($conn, $search)
     $offset = $page * $itemnum;
     $sql = "SELECT * FROM data WHERE root LIKE'%$search%' LIMIT $itemnum OFFSET  $offset";
     $result = $conn->query($sql);
-    $price = 199;
 
     if ($result->num_rows > 0) {
         // output data of each row
@@ -77,7 +76,15 @@ function searchItems($conn, $search)
             $model = str_replace("/", " - ", $model);
             $name = $row["name"];
             $id = $row["id"];
-            $description = "Sattel für $model ab 199 euro!";
+
+            $sql = "SELECT * FROM prices WHERE id LIKE'%$id%'";
+            $ids = $conn->query($sql);
+            while ($id = $ids->fetch_assoc()) {
+                $price = $id["price"];
+                $visible = $id["visible"];
+            }
+
+            $description = "Sattel für $model ab $price euro!";
             $link = "product.php?search=$search&page=$page&id=$id";
 
             $nameWithType = $row["nameWithType"];
@@ -90,20 +97,21 @@ function searchItems($conn, $search)
                 //$url = __DIR__ . "/imgs/resized/" . "$folderName-$nameWithType";
                 $url = "./imgs/resized/" . "$folderName-$nameWithType";
             }
-
-            $out .=                '<li class="item">
-            <h3 class="item__name"><a href="' . $link . '">' . $name . '</a></h3>
-            <figure class="img__container">
-                <img class="item__img" src="' . $url . '" alt="' . $name . '">
-            </figure>
-            <div class="item__info">
-                <div class="item--row">
-                    <p class="item__price">AB ' . $price . ' EUR</p>
-                    <a class="item__button noUnderline" href="' . $link . '">ANFRAGE</a>
-                </div>
-                <p class="item__description">' . $description . '</p>
-            </div>
-        </li>';
+            if ($visible == 1) {
+                $out .=                '<li class="item">
+<h3 class="item__name"><a href="' . $link . '">' . $name . '</a></h3>
+<figure class="img__container">
+<img class="item__img" src="' . $url . '" alt="' . $name . '">
+</figure>
+<div class="item__info">
+<div class="item--row">
+<p class="item__price">AB ' . $price . ' EUR</p>
+<a class="item__button noUnderline" href="' . $link . '">ANFRAGE</a>
+</div>
+<p class="item__description">' . $description . '</p>
+</div>
+</li>';
+            }
         }
         return $out;
     }
@@ -166,9 +174,9 @@ function root($search)
         if ($root[$i] != "") {
             $link .= $root[$i] . "/";
             //echo "folder" . $root[$i] . "<br>";
-            $out .= '<li class="folder__root">         
-               <a class="root__file" href="gallery.php?search=' . $link . '">' . $root[$i] . '</a><i class="fas fa-angle-right"></i>     
-              </li>';
+            $out .= '<li class="folder__root">
+<a class="root__file" href="gallery.php?search=' . $link . '">' . $root[$i] . '</a><i class="fas fa-angle-right"></i>
+</li>';
         }
     }
     return $out;
@@ -207,16 +215,17 @@ function root($search)
                 <ul class="folder__container">
                     <?php echo root($search) ?>
                 </ul>
-                <h2 class="folder__dir"><?php
+                <h2 class="folder__dir">
+                    <?php
 
-                                        $folderName = explode("/", $search);
-                                        if (isset($folderName[count($folderName) - 2])) {
-                                            $folderName = $folderName[count($folderName) - 2];
-                                        } else {
-                                            $folderName = "";
-                                        }
-                                        echo $folderName;
-                                        ?></h2>
+                    $folderName = explode("/", $search);
+                    if (isset($folderName[count($folderName) - 2])) {
+                        $folderName = $folderName[count($folderName) - 2];
+                    } else {
+                        $folderName = "";
+                    }
+                    echo $folderName;
+                    ?></h2>
                 <ul class="folders">
                     <?php
                     echo searchFolders($conn, $search)
