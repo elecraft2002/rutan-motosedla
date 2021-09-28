@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/nav.css">
     <link rel="stylesheet" href="./styles/product.css">
     <link rel="stylesheet" href="./styles/gallery.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/7a91434f52.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
@@ -70,25 +70,137 @@
             <div class="content__info">
                 <h1>SEO Název</h1>
                 <h2>Název produktu</h2>
-                <form>
-                    <div class="form-group">
-                        <label for="name">Namen</label>
-                        <input type="text" class="form-control" id="name" placeholder="einen Namen wählen">
+                <div class="rendered-form">
+                    <div class="">
+                        <h1 access="false" id="control-7948144">Header</h1>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email address</label>
-                        <input type="email" class="form-control" id="email" aria-describedby="email"
-                            placeholder="Email eingeben">
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                    <form class="form-horizontal" action="welcome.php" method="post">
+                        <fieldset>
+
+                            <!-- Form Name -->
+                            <legend>Form Name</legend>
+
+                            <!-- Multiple Checkboxes -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="0">Gelkissen 15mm STANDART
+                                    integration = 60
+                                    Euro / pro platz</label>
+                                <div class="col-md-4">
+                                    <div class="checkbox">
+                                        <label for="0-0">
+                                            <input type="checkbox" name="0" id="0-0" data-price="60" value="1">
+                                            Fahrer
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for="0-1">
+                                            <input type="checkbox" name="0" id="0-1" data-price="60" value="2">
+                                            Beifahrer
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Multiple Checkboxes -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="1">Gelkissen 20mm PREMIUM
+                                    integration = 90 Euro / pro platz</label>
+                                <div class="col-md-4">
+                                    <div class="checkbox">
+                                        <label for="1-0">
+                                            <input type="checkbox" name="1" id="1-0" data-price="90" value="1">
+                                            Fahrer
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for="1-1">
+                                            <input type="checkbox" name="1" id="1-1" data-price="90" value="2">
+                                            Beifahrer
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Multiple Checkboxes -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="2">Sitzheizung integration = 90 Euro / pro
+                                    platz</label>
+                                <div class="col-md-4">
+                                    <div class="checkbox">
+                                        <label for="2-0">
+                                            <input type="checkbox" name="2" id="2-0" data-price="90" value="1">
+                                            Fahrer
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for="2-1">
+                                            <input type="checkbox" name="2" id="2-1" data-price="90" value="2">
+                                            Beifahrer
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Multiple Checkboxes -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="3">Änderungen in der Höhe und der
+                                    Breite = 20 Euro / pro platz</label>
+                                <div class="col-md-4">
+                                    <div class="checkbox">
+                                        <label for="3-0">
+                                            <input type="checkbox" name="3" id="3-0" data-price="20" value="1">
+                                            Fahrer
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for="3-1">
+                                            <input type="checkbox" name="3" id="3-1" data-price="20" value="2">
+                                            Beifahrer
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Multiple Checkboxes -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="4">Ziernähte - quernähten und
+                                    Rautensteppung - = 20 Euro / pro platz</label>
+                                <div class="col-md-4">
+                                    <div class="checkbox">
+                                        <label for="4-0">
+                                            <input type="checkbox" name="4" id="4-0" data-price="20" value="1">
+                                            Fahrer
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for="4-1">
+                                            <input type="checkbox" name="4" id="4-1" data-price="20" value="2">
+                                            Beifahrer
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Textarea -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="textarea">Ich möchte andere Designänderungen
+                                    an diesem Sattel vornehmen</label>
+                                <div class="col-md-4">
+                                    <textarea class="form-control" id="textarea" name="textarea"></textarea>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                        <div class="buy">
+                            <p class="buy__price" id="price"></p>
+                            <button class="buy__button btn" type="submit">ANFRAGE</button>
+                        </div>
+                    </form>
+
+                </div>
             </div>
-        </div>
     </main>
 </body>
+<script src="./scripts/product.js"></script>
 
 </html>

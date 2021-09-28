@@ -43,3 +43,7 @@ a {
   .folder__container {
     margin-left: 1rem;
   }
+
+  label span span{
+    font-weight: 500;
+  }
