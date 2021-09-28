@@ -9,9 +9,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/nav.css">
-    <link rel="stylesheet" href="./styles/product.css">
     <link rel="stylesheet" href="./styles/gallery.css">
     <script src="https://kit.fontawesome.com/7a91434f52.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/product.css">
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/lightgallery.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <link rel="stylesheet" href="    https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/css/lg-fullscreen.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/css/lg-zoom.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/css/lightgallery-core.min.css">
     <title>Document</title>
 </head>
 
@@ -61,31 +68,31 @@
             </li>
         </ul>
         <div class="content">
-            <div class="content__img">
-                <figure>
-                    <img src="https://drive.google.com/uc?id=1OeOkvSs_7pJPhguV-k5YqonP6tv5X5sh&export=download"
-                        alt="obrázek">
-                </figure>
+            <div id="gallery" class="content__img">
+                <a href="./sd">
+                    <figure>
+                        <img src="http://vojtikuvworkout.tode.cz/Web/imgs/resized/CAF%C3%89%20%20%20STAVBY-dragstar%201100%20jednosic%20speci%C3%A1lka_SROVN%C3%81N%C3%8D.jpg"
+                            alt="obrázek">
+                    </figure>
+                </a>
             </div>
             <div class="content__info">
                 <h1>SEO Název</h1>
                 <h2>Název produktu</h2>
                 <div class="rendered-form">
-                    <div class="">
-                        <h1 access="false" id="control-7948144">Header</h1>
-                    </div>
-                    <form class="form-horizontal" action="welcome.php" method="post">
+                    <button id="ANPASSEN" class="btn">ANPASSEN</button>
+                    <form class="form-horizontal">
                         <fieldset>
 
                             <!-- Form Name -->
-                            <legend>Form Name</legend>
+                            <legend>Anpassen</legend>
 
                             <!-- Multiple Checkboxes -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="0">Gelkissen 15mm STANDART
+                                <label class="Beifahrer control-label" for="0">Gelkissen 15mm STANDART
                                     integration = 60
                                     Euro / pro platz</label>
-                                <div class="col-md-4">
+                                <div class="Beifahrer">
                                     <div class="checkbox">
                                         <label for="0-0">
                                             <input type="checkbox" name="0" id="0-0" data-price="60" value="1">
@@ -103,9 +110,9 @@
 
                             <!-- Multiple Checkboxes -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="1">Gelkissen 20mm PREMIUM
+                                <label class="Beifahrer control-label" for="1">Gelkissen 20mm PREMIUM
                                     integration = 90 Euro / pro platz</label>
-                                <div class="col-md-4">
+                                <div class="Beifahrer">
                                     <div class="checkbox">
                                         <label for="1-0">
                                             <input type="checkbox" name="1" id="1-0" data-price="90" value="1">
@@ -123,9 +130,9 @@
 
                             <!-- Multiple Checkboxes -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="2">Sitzheizung integration = 90 Euro / pro
+                                <label class="Beifahrer control-label" for="2">Sitzheizung integration = 90 Euro / pro
                                     platz</label>
-                                <div class="col-md-4">
+                                <div class="Beifahrer">
                                     <div class="checkbox">
                                         <label for="2-0">
                                             <input type="checkbox" name="2" id="2-0" data-price="90" value="1">
@@ -143,9 +150,9 @@
 
                             <!-- Multiple Checkboxes -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="3">Änderungen in der Höhe und der
+                                <label class="Beifahrer control-label" for="3">Änderungen in der Höhe und der
                                     Breite = 20 Euro / pro platz</label>
-                                <div class="col-md-4">
+                                <div class="Beifahrer">
                                     <div class="checkbox">
                                         <label for="3-0">
                                             <input type="checkbox" name="3" id="3-0" data-price="20" value="1">
@@ -163,9 +170,9 @@
 
                             <!-- Multiple Checkboxes -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="4">Ziernähte - quernähten und
+                                <label class="Beifahrer control-label" for="4">Ziernähte - quernähten und
                                     Rautensteppung - = 20 Euro / pro platz</label>
-                                <div class="col-md-4">
+                                <div class="Beifahrer">
                                     <div class="checkbox">
                                         <label for="4-0">
                                             <input type="checkbox" name="4" id="4-0" data-price="20" value="1">
@@ -183,17 +190,17 @@
 
                             <!-- Textarea -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="textarea">Ich möchte andere Designänderungen
+                                <label class="Beifahrer control-label" for="textarea">Ich möchte andere Designänderungen
                                     an diesem Sattel vornehmen</label>
-                                <div class="col-md-4">
+                                <div class="Beifahrer">
                                     <textarea class="form-control" id="textarea" name="textarea"></textarea>
                                 </div>
                             </div>
 
                         </fieldset>
                         <div class="buy">
-                            <p class="buy__price" id="price"></p>
-                            <button class="buy__button btn" type="submit">ANFRAGE</button>
+                            <p class="buy__price" id="price"><span id="ANFRAGE" >199</span> EUR</p>
+                            <button class="buy__button btn">ANFRAGE</button>
                         </div>
                     </form>
 
@@ -201,6 +208,10 @@
             </div>
     </main>
 </body>
+
 <script src="./scripts/product.js"></script>
+<script type="text/javascript">
+    lightGallery(document.getElementById('gallery'));
+</script>
 
 </html>

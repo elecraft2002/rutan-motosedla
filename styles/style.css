@@ -114,8 +114,6 @@ a {
   color: var(--black);
 }
 
-
-
 .welcome__button:first-of-type {
   margin-bottom: 1rem;
 }
@@ -217,4 +215,12 @@ a:hover:after {
   animation: hover ease-in-out 1s;
   animation-iteration-count: infinite;
   color: var(--white);
+}
+
+.navigation.navigation--top {
+  background: rgba(255, 255, 255, 0);
+  color: white;
+}
+.navigation.navigation--top a {
+  color: white;
 }

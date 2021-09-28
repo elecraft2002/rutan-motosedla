@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
 .navigation__logo {
   height: 100%;
   margin: 0 0 0 1rem;
@@ -7,6 +8,7 @@
 
 .navigation a {
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .navigation__logo img {
@@ -21,17 +23,20 @@
 .navigation__row > a:first-child {
   height: 90px;
 }
+
 .navigation {
+  transition: 1s ease;
   position: fixed;
   width: 100vw;
   display: flex;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 1);
   justify-content: space-between;
   overflow-x: hidden;
-  max-width: 1200px;
   padding: 0 calc(50vw - 600px);
   z-index: 999;
   top: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
 
 .navigation ul {
@@ -162,4 +167,14 @@
 .underline:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+a:hover {
+  color: var(--black);
+}
+
+@media screen and (min-width: 639px) {
+  .navigation a {
+    font-size: 2em;
+  }
 }

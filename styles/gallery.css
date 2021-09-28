@@ -159,6 +159,7 @@ a:hover:after {
   border-radius: 5px;
   filter: drop-shadow(3px 3px 0px #b8a200);
   transition: 0.5s;
+  cursor: pointer;
 }
 .item__button:hover {
   color: var(--white);

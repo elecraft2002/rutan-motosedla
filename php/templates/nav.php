@@ -1,8 +1,8 @@
-<nav class="navigation navigation-top">
+<nav class="navigation navigation--top">
     <div class="navigation__row">
         <a class="noUnderline" href="./index.php">
             <figure class="navigation__logo">
-                <img src="./imgs/logo.svg" alt="logo">
+                <img src="./imgs/logo.png" alt="logo">
             </figure>
         </a>
         <a href="javascript:void(0)" class="hamburger hamburger-btn hamburger-zone noUnderline">
@@ -29,4 +29,12 @@
             });
         }
     });
+    document.addEventListener("scroll", () => {
+        let navigation = document.getElementsByClassName("navigation")[0]
+        if(window.pageYOffset > 10){
+            navigation.classList.remove("navigation--top")
+            return
+        }
+            navigation.classList.add("navigation--top")
+    })
 </script>
