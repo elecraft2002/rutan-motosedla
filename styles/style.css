@@ -63,6 +63,7 @@ a {
   background-color: white;
   animation: width 1s ease 0.5s;
   animation-fill-mode: forwards;
+  margin: 1rem 0;
 }
 @keyframes width {
   0% {
@@ -223,4 +224,9 @@ a:hover:after {
 }
 .navigation.navigation--top a {
   color: white;
+}
+@media screen and (min-width: 1000px) {
+  #info {
+    font-size: 1.5em;
+  }
 }

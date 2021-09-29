@@ -12,8 +12,8 @@
         </a>
     </div>
     <ul class="hamburger-zone">
-        <li><a href="./gallery.php?search=FOTOGALERIE/">Galerie</a></li>
-        <li><a href="">Link 2</a></li>
+        <li><a href="./gallery.php?search=FOTOGALERIE/">GALERIE</a></li>
+        <li><a href="">PREISLISTE</a></li>
         <li><a href="">Link 3</a></li>
     </ul>
 </nav>

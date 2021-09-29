@@ -38,7 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     }
-
 }
 function save_image($inPath, $outPath)
 { //Download images from remote server

@@ -121,8 +121,8 @@ product($conn, $id);
                             <!-- Multiple Checkboxes -->
                             <div class="form-group">
                                 <label class=" control-label" for="0">Gelkissen 15mm STANDART
-                                    integration = 60
-                                    Euro / pro platz</label>
+                                    integration <br>
+                                    <span>60 Euro / pro platz</span></label>
                                 <div class="">
                                     <div class="checkbox">
                                         <label for="0-0">
@@ -142,7 +142,7 @@ product($conn, $id);
                             <!-- Multiple Checkboxes -->
                             <div class="form-group">
                                 <label class=" control-label" for="1">Gelkissen 20mm PREMIUM
-                                    integration = 90 Euro / pro platz</label>
+                                    integration <br> <span>90 Euro / pro platz</span></label>
                                 <div class="">
                                     <div class="checkbox">
                                         <label for="1-0">
@@ -161,8 +161,7 @@ product($conn, $id);
 
                             <!-- Multiple Checkboxes -->
                             <div class="form-group">
-                                <label class=" control-label" for="2">Sitzheizung integration = 90 Euro / pro
-                                    platz</label>
+                                <label class=" control-label" for="2">Sitzheizung integration <br> <span>90 Euro / pro platz</span></label>
                                 <div class="">
                                     <div class="checkbox">
                                         <label for="2-0">
@@ -182,7 +181,7 @@ product($conn, $id);
                             <!-- Multiple Checkboxes -->
                             <div class="form-group">
                                 <label class=" control-label" for="3">Änderungen in der Höhe und der
-                                    Breite = 20 Euro / pro platz</label>
+                                    Breite <br> <span>20 Euro / pro platz</span></label>
                                 <div class="">
                                     <div class="checkbox">
                                         <label for="3-0">
@@ -202,7 +201,7 @@ product($conn, $id);
                             <!-- Multiple Checkboxes -->
                             <div class="form-group">
                                 <label class=" control-label" for="4">Ziernähte - quernähten und
-                                    Rautensteppung - = 20 Euro / pro platz</label>
+                                    Rautensteppung <br> <span>20 Euro / pro platz</span></label>
                                 <div class="">
                                     <div class="checkbox">
                                         <label for="4-0">
@@ -243,7 +242,7 @@ product($conn, $id);
 <script>
     let id = "<?php echo $idProduct ?>"
 </script>
-<script src="./scripts/product.js"></script>
+<script defer src="./scripts/product.js"></script>
 <script type="text/javascript">
     lightGallery(document.getElementById('gallery'));
 </script>

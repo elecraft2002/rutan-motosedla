@@ -95,6 +95,7 @@ function priceValidation($id)
                 <label class=" control-label" for="singlebutton">ANFRAGE</label>
                 <div class="">
                     <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
+                    <a id="buy" class="item__button buy__button noUnderline">ANFRAGE</a>
                 </div>
             </div>
 

@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'af64370fb03a431916ca6d131b654386a9cc83cc',
+    'reference' => '7800c448f89b282ddf693b859dc32adeb8ed2149',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'af64370fb03a431916ca6d131b654386a9cc83cc',
+      'reference' => '7800c448f89b282ddf693b859dc32adeb8ed2149',
     ),
     'asimlqt/php-google-spreadsheet-client' => 
     array (

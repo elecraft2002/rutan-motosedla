@@ -22,7 +22,7 @@
             <div class="welcome__content">
                 <h1>Professionelle Anpassung der Motorradsitzbänke</h1>
                 <span class="line"></span>
-                <p>SCHNELL - GÜNSTIG - PRÄZISE</p>
+                <!-- <p>SCHNELL - GÜNSTIG - PRÄZISE</p> -->
                 <div class="welcome__button welcome__button-click">
                     <a href="./gallery.php?search=FOTOGALERIE/" class="noUnderline">
                         <p>Bestellung</p>

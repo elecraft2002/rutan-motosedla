@@ -32,11 +32,16 @@
   background-color: rgba(255, 255, 255, 1);
   justify-content: space-between;
   overflow-x: hidden;
-  padding: 0 calc(50vw - 600px);
   z-index: 999;
   top: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
+}
+@media screen and (min-width: 1200px) {
+  .navigation {
+    width: 1200px;
+    padding: 0 calc(50vw - 600px);
+  }
 }
 
 .navigation ul {
