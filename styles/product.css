@@ -54,6 +54,7 @@ main {
 @media screen and (min-width: 1250px) {
   .content {
     display: grid;
+    grid-gap: 10px;
     grid-template-columns: 50% 50%;
   }
 }
@@ -132,4 +133,14 @@ main {
 }
 .control-label span {
   color: var(--yellow);
+}
+#buy__btn {
+  border: none;
+}
+
+label {
+  text-transform: uppercase;
+}
+.navigation {
+  width: 100vw;
 }

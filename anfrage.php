@@ -43,7 +43,7 @@ function priceValidation($id)
 }
 ?>
 <div class="buy__container" id="buy">
-    <form class="form-horizontal">
+    <form class="form-horizontal" action='./buy.php?customization=<?php echo $_REQUEST["customization"] ?>&id=<?php echo $_REQUEST["id"] ?>' method="post">
         <fieldset>
             <!-- Form Name -->
             <legend>Einkaufspreis <?php echo $price ?> EUR</legend>
@@ -80,6 +80,13 @@ function priceValidation($id)
                     <input id="email" name="email" type="email" placeholder="Email" class="form-control input-md" required="">
                 </div>
             </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class=" control-label" for="motorrad">MOTORRAD & BAUJAHR</label>
+                <div class="">
+                    <input id="motorrad" name="motorrad" type="motorrad" class="form-control input-md" required="">
+                </div>
+            </div>
 
             <!-- Textarea -->
             <div class="form-group">
@@ -94,12 +101,13 @@ function priceValidation($id)
             <div class="form-group">
                 <label class=" control-label" for="singlebutton">ANFRAGE</label>
                 <div class="">
-                    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
-                    <a id="buy" class="item__button buy__button noUnderline">ANFRAGE</a>
+                    <button id="buy__btn" name="singlebutton" class="item__button buy__button noUnderline">ANFRAGE</button>
+                    <a id="buy__btnTest" class="item__button buy__button noUnderline">ANFRAGE</a>
                 </div>
             </div>
 
         </fieldset>
     </form>
+    <div id="log"></div>
 
 </div>
