@@ -137,6 +137,9 @@ product($conn, $id);
                                         </label>
                                     </div>
                                 </div>
+                                <figure class="form-group__container">
+                                    <img class="form-group__img" loading="lazy" src="./imgs/sedlo.jpg" alt="">
+                                </figure>
                             </div>
 
                             <!-- Multiple Checkboxes -->
@@ -157,6 +160,9 @@ product($conn, $id);
                                         </label>
                                     </div>
                                 </div>
+                                <figure class="form-group__container">
+                                    <img class="form-group__img" loading="lazy" src="./imgs/sedlo.jpg" alt="">
+                                </figure>
                             </div>
 
                             <!-- Multiple Checkboxes -->

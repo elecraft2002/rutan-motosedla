@@ -140,7 +140,22 @@ main {
 
 label {
   text-transform: uppercase;
+  cursor: pointer;
 }
 .navigation {
   width: 100vw;
+}
+.form-group__img {
+  width: 100%;
+  height: 100%;
+}
+.form-group__container{
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .form-group__container{
+    width: 50%;
+  }
+  
 }
