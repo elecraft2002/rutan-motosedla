@@ -18,6 +18,7 @@ function searchFolders($conn, $search)
         }
 
         $array = array_unique($array);
+        sort($array);
 
         for ($i = 0; $i < count($array); $i++) {
             if (!isset($array[$i])) {
@@ -82,8 +83,8 @@ function searchItems($conn, $search)
                 $url = $row["url"];
             }
             if ($visible == 1) {
-                $out .=                '<li class="item">
-<h3 class="item__name"><a href="' . $link . '">' . $name . '</a></h3>
+                $out .=                '<li class="item"><a class="noUnderline" href="' . $link . '">
+<h3 class="item__name"></h3>
 <figure class="img__container">
 <img class="item__img" src="' . $url . '" alt="' . $name . '">
 </figure>
@@ -93,7 +94,7 @@ function searchItems($conn, $search)
 <a class="item__button noUnderline" href="' . $link . '">ANFRAGE</a>
 </div>
 <p class="item__description">' . $description . '</p>
-</div>
+</div></a>
 </li>';
             }
         }

@@ -86,7 +86,7 @@ product($conn, $id);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/css/lg-zoom.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/css/lightgallery-core.min.css">
-    <title>Document</title>
+    <title>Rutan Performance Product</title>
 </head>
 
 <body>

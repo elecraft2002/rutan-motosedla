@@ -1,0 +1,42 @@
+h2 {
+  text-align: center;
+  font-size: 2em;
+}
+.doba {
+  text-align: center;
+}
+span,
+span a,
+span a:hover {
+  color: rgb(216, 0, 0);
+}
+p {
+  font-size: 1.3em;
+}
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  justify-content: stretch;
+  grid-template-areas: "info--left info--right";
+}
+
+.info--left {
+  grid-area: info--left;
+}
+
+.info--right {
+  grid-area: info--right;
+}
+.map {
+    width: 100%;
+}
+
+@media screen and (max-width: 470px) {
+    p {
+        font-size: 1em;
+      }
+  }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rutan Motosedla</title>
+    <title>Rutan Performance Motorradsitzbänke</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="./styles/nav.css">
     <link rel="stylesheet" href="./styles/style.css">
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php include __DIR__."/php/templates/nav.php"  ?>
+    <?php include __DIR__ . "/php/templates/nav.php"  ?>
     <main>
         <section class="welcome">
             <div class="welcome__video">
