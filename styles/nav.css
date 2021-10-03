@@ -129,7 +129,7 @@
     margin: 0px;
   }
   ul.hamburger-zone.active {
-    height: calc(34px * 5);
+    height: calc(53px * 2);
     overflow: hidden;
   }
   .navigation {
@@ -146,6 +146,9 @@
   }
   .navigation ul li {
     padding: 0.5em;
+  }
+  .navigation a {
+    font-size: 2em;
   }
 }
 

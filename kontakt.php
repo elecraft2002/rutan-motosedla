@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./styles/nav.css">
     <link rel="stylesheet" href="./styles/gallery.css">
     <link rel="stylesheet" href="./styles/kontakt.css">
+    <link rel="stylesheet" href="./styles/footer.css">
     <script src="https://kit.fontawesome.com/7a91434f52.js" crossorigin="anonymous"></script>
 </head>
 
@@ -38,7 +39,7 @@
                 </div>
             </div>
             <iframe class="map" style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.4827988318425!2d15.059820515906203!3d50.822220568387735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4709319ad191b671%3A0x383276cf56edf86c!2sRUTAN+Performance!5e0!3m2!1scs!2scz!4v1550580254084" width="600" height="450" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-            <p>Bestellvorgang - senden Sie uns eine Anfrage mit dem Motorradtyp an <span> <a href="mailto:info@rutan.cz"></a>info@rutan.cz</a></span> oder verwenden Sie das
+            <p>Bestellvorgang - senden Sie uns eine Anfrage mit dem Motorradtyp an <span> <a href="mailto:info@rutan.cz">info@rutan.cz</a></span> oder verwenden Sie das
                 untenstehende Kontaktformular. Geben Sie an, welche Änderungen Sie wünschen, und wir senden Ihnen ein
                 Angebot mit Fotos und weiteren Informationen.
 
@@ -47,11 +48,7 @@
             </p>
         </div>
     </main>
-    <footer>
-        <div>
-            
-        </div>
-    </footer>
+                <?php include __DIR__ . "/php/templates/footer.php" ?>
 </body>
 
 </html>

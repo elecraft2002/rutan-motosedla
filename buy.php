@@ -144,7 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = 'Nová obědnávka z Motosedla DE';
+            $mail->Subject = 'Motosedla DE';
             $mail->Body    = $text;
             // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
@@ -222,6 +222,7 @@ function infoText($ids)
     <link rel="stylesheet" href="./styles/gallery.css">
     <script src="https://kit.fontawesome.com/7a91434f52.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/product.css">
+    <link rel="stylesheet" href="./styles/footer.css">
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/lightgallery.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/plugins/zoom/lg-zoom.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
@@ -244,6 +245,7 @@ function infoText($ids)
             </a>
         </div>
     </main>
+    <?php include __DIR__ . "/php/templates/footer.php" ?>
     <style>
         main {
             flex-direction: column;

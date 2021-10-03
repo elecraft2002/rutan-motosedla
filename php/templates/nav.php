@@ -30,10 +30,10 @@
     });
     document.addEventListener("scroll", () => {
         let navigation = document.getElementsByClassName("navigation")[0]
-        if(window.pageYOffset > 10){
+        if (window.pageYOffset > 50) {
             navigation.classList.remove("navigation--top")
             return
         }
-            navigation.classList.add("navigation--top")
+        navigation.classList.add("navigation--top")
     })
 </script>

@@ -79,6 +79,7 @@ product($conn, $id);
     <link rel="stylesheet" href="./styles/gallery.css">
     <script src="https://kit.fontawesome.com/7a91434f52.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/product.css">
+    <link rel="stylesheet" href="./styles/footer.css">
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/lightgallery.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/plugins/zoom/lg-zoom.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
@@ -244,6 +245,7 @@ product($conn, $id);
                 </div>
             </div>
     </main>
+    <?php include __DIR__ . "/php/templates/footer.php" ?>
 </body>
 <script>
     let id = "<?php echo $idProduct ?>"

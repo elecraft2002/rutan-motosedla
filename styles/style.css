@@ -230,3 +230,6 @@ a:hover:after {
     font-size: 1.5em;
   }
 }
+.navigation--top .hamburger span {
+  background-color: var(--white);
+}

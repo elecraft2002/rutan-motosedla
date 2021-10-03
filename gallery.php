@@ -24,6 +24,7 @@ if (!empty($_GET["search"])) {
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="./styles/nav.css">
     <link rel="stylesheet" href="./styles/gallery.css">
+    <link rel="stylesheet" href="./styles/footer.css">
     <script src="https://kit.fontawesome.com/7a91434f52.js" crossorigin="anonymous"></script>
 </head>
 
@@ -77,6 +78,7 @@ if (!empty($_GET["search"])) {
             ?>
         </div>
     </main>
+    <?php include __DIR__ . "/php/templates/footer.php" ?>
 </body>
 
 </html>
