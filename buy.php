@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "Sorry, there was an error uploading your file.";
             }
         }
-        $userImg = "http://vojtikuvworkout.tode.cz/Web/imgs/userImgs/" . $_FILES["fileToUpload"]["name"];
+        $userImg = "http://rutan-performance.com/imgs/userImgs/" . $_FILES["fileToUpload"]["name"];
         //$userImg = realpath("/imgs/userImgs/" . $_FILES["fileToUpload"]["name"]);
     }
 
@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="container__info">
             <img src="http://rutan-performance.com/imgs/logo.png" width="100" alt="Rutan logo">
-            <h1>Nová obědnávka z Motosedla DE</h1>
+            <h1>Nová objednávka z Motosedla DE</h1>
             <h2>Sedlo</h2>
             <div>
                 <p>Jméno sedla :<b> ' . $sattleName . '</b></p>
@@ -178,11 +178,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             //Server settings
             //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
             $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host       = 'smtp.volny.cz';                     //Set the SMTP server to send through
+            $mail->Host       = 'smtp.forpsi.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
 
-            $mail->Username   = 'rutanmotosedla@volny.cz';                     //SMTP username
-            $mail->Password   = 'Rutanmotosedla2021';                               //SMTP password
+            $mail->Username   = 'info@rutan-performance.com';                     //SMTP username
+            $mail->Password   = '$LMn2wJV}x96vFK';                               //SMTP password
             //$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->SMTPSecure = "tls";            //Enable implicit TLS encryption
             $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set 'SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS'
@@ -191,8 +191,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } */
 
             //Recipients
-            $mail->setFrom('rutanmotosedla@volny.cz', 'Mailer');
-            $mail->addAddress('manickaczru@gmail.com', 'Joe User');     //Add a recipient
+            $mail->setFrom('info@rutan-performance.com', 'RUTAN MOTOSEDLA DE');
+            $mail->addAddress('info@rutan-performance.com', 'Rutan Eshop');     //Add a recipient
 
             //Attachments
             //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
