@@ -1,0 +1,10 @@
+fieldset {
+    display:  flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+img {
+    max-width: calc(100vw - 5rem);
+}

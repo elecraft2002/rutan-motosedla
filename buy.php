@@ -63,12 +63,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     //echo $info;
     //echo $price;
-    $target_dir = "imgs/userImgs/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+    if (!empty($_FILES["fileToUpload"]["name"])) {
+        $target_dir = "imgs/userImgs/";
+        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-    if ($_FILES["fileToUpload"]["name"] != "") {
         // Check if image file is a actual image or fake image
         if (isset($_POST["submit"])) {
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -330,6 +330,11 @@ function infoText($ids)
             width: 100vw;
         }
     </style>
+    <script>
+        setTimeout(() => {
+            window.location.replace("./index.php");
+        }, 2000);
+    </script>
 </body>
 
 </html>

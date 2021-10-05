@@ -106,9 +106,8 @@
 
                 <!-- Button -->
                 <div class="form-group">
-                    <label class=" control-label" for="singlebutton">SENDEN</label>
                     <div class="">
-                        <button type="submit" value="Upload Image" name="submit" id="buy__btn" class="item__button buy__button noUnderline">ANFRAGE</button>
+                        <button type="submit" value="Upload Image" name="submit" id="buy__btn" class="item__button buy__button noUnderline">SENDEN</button>
                     </div>
                 </div>
 

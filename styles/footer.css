@@ -7,7 +7,7 @@ body {
 .footer a:hover {
   background-color: var(--gray);
   color: var(--white);
-  font-size: 1.3em;
+  font-size: 1em;
 }
 @media screen and (min-width: 1200px) {
   .footer {
@@ -17,7 +17,7 @@ body {
 }
 .footer__top {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   margin-top: 1em;
 }
@@ -32,7 +32,10 @@ body {
   margin: 1rem;
 }
 @media screen and (max-width: 400px) {
-    .footer {
-        font-size: 1em;
-    }
+  .footer {
+    font-size: 1em;
   }
+}
+body {
+  min-height: 100vh;
+}

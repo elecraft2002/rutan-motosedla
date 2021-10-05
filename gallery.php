@@ -47,6 +47,7 @@ if (!empty($_GET["search"])) {
         <div class="controlls">
             <div class="folder__container">
                 <h1>Professionelle Anpassung der Motorradsitzbänke Rutan Performance Gallery</h1>
+                <p class="info">WÄHLEN SIE IHREN SATTEL AUS >> KONFIGURIEREN SIE IHRE AUSRÜSTUNG >> SENDEN SIE UNS EINE UNVERBINDLICHE ANFRAGE! ANSCHLIESSEND BESTIMMEN WIR GEMEINSAM DAS ERSCHEINUNGSBILD IHRES SATTELS (LACKE, LEDER, ETC.) IM DETAIL</p>
                 <ul class="folder__container">
                     <?php echo root($search) ?>
                 </ul>

@@ -24,7 +24,7 @@
                 <video src="./videos/background.mp4" autoplay loop loading="lazy"></video>
             </div>
             <div class="welcome__content">
-                <h1>Professionelle Anpassung der Motorradsitzbänke Rutan Performance</h1>
+                <h1>Professionelle Anpassung der Motorradsitzbänke</h1>
                 <span class="line"></span>
                 <!-- <p>SCHNELL - GÜNSTIG - PRÄZISE</p> -->
                 <div class="welcome__button welcome__button-click">

@@ -57,7 +57,7 @@
   padding: 1em;
 }
 
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 800px) {
   .hamburger {
     --rotate-time: 0.1s;
     --move-time: 0.2s;
@@ -129,7 +129,7 @@
     margin: 0px;
   }
   ul.hamburger-zone.active {
-    height: calc(53px * 2);
+    height: calc(63px * 3);
     overflow: hidden;
   }
   .navigation {
@@ -181,7 +181,7 @@ a:hover {
   color: var(--black);
 }
 
-@media screen and (min-width: 639px) {
+@media screen and (min-width: 800px) {
   .navigation a {
     font-size: 2em;
   }

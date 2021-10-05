@@ -14,6 +14,7 @@
     <ul class="hamburger-zone">
         <li><a href="./gallery.php?search=FOTOGALERIE/">GALERIE</a></li>
         <li><a href="./kontakt.php">KONTAKT</a></li>
+        <li><a href="./preisliste.php">preisliste</a></li>
     </ul>
 </nav>
 <script>
