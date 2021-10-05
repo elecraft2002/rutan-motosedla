@@ -21,11 +21,14 @@ if (!empty($_GET["search"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rutan Performance Galerie</title>
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/nav.css">
     <link rel="stylesheet" href="./styles/gallery.css">
     <link rel="stylesheet" href="./styles/footer.css">
     <script src="https://kit.fontawesome.com/7a91434f52.js" crossorigin="anonymous"></script>
+    <?php
+    include "./php/templates/header.php"
+    ?>
 </head>
 
 <body>
@@ -43,7 +46,7 @@ if (!empty($_GET["search"])) {
     <main>
         <div class="controlls">
             <div class="folder__container">
-                <!-- <h1>Rutan performance sedla</h1> -->
+                <h1>Professionelle Anpassung der Motorradsitzbänke Rutan Performance Gallery</h1>
                 <ul class="folder__container">
                     <?php echo root($search) ?>
                 </ul>

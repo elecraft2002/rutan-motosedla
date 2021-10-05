@@ -6,11 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rutan Performance Motorradsitzbänke</title>
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/nav.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/footer.css">
     <script src="https://kit.fontawesome.com/7a91434f52.js" crossorigin="anonymous"></script>
+    <?php
+    include "./php/templates/header.php"
+    ?>
 </head>
 
 <body>
@@ -21,7 +24,7 @@
                 <video src="./videos/background.mp4" autoplay loop loading="lazy"></video>
             </div>
             <div class="welcome__content">
-                <h1>Professionelle Anpassung der Motorradsitzbänke</h1>
+                <h1>Professionelle Anpassung der Motorradsitzbänke Rutan Performance</h1>
                 <span class="line"></span>
                 <!-- <p>SCHNELL - GÜNSTIG - PRÄZISE</p> -->
                 <div class="welcome__button welcome__button-click">
