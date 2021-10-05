@@ -43,7 +43,7 @@ function priceValidation($id)
 }
 ?>
 <div class="buy__container" id="buy">
-    <form class="form-horizontal" action='./buy.php?customization=<?php echo $_REQUEST["customization"] ?>&id=<?php echo $_REQUEST["id"] ?>' method="post">
+    <form class="form-horizontal" action='./buy.php?customization=<?php echo $_REQUEST["customization"] ?>&id=<?php echo $_REQUEST["id"] ?>' method="post" enctype="multipart/form-data">
         <fieldset>
             <!-- Form Name -->
             <legend>Einkaufspreis <?php echo $price ?> EUR</legend>
@@ -101,8 +101,7 @@ function priceValidation($id)
             <div class="form-group">
                 <label class=" control-label" for="singlebutton">ANFRAGE</label>
                 <div class="">
-                    <button id="buy__btn" name="singlebutton" class="item__button buy__button noUnderline">ANFRAGE</button>
-                    <a id="buy__btnTest" class="item__button buy__button noUnderline">ANFRAGE</a>
+                    <button type="submit" value="Upload Image" name="submit" id="buy__btn" class="item__button buy__button noUnderline">ANFRAGE</button>
                 </div>
             </div>
 

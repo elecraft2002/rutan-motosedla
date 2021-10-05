@@ -93,10 +93,24 @@ function searchItems($conn, $search)
 <p class="item__price">AB ' . $price . ' EUR</p>
 <a class="item__button noUnderline" href="' . $link . '">ANFRAGE</a>
 </div>
-<p class="item__description">' . $description . '</p>
 </div></a>
 </li>';
             }
+/*             if ($visible == 1) {
+                $out .=                '<li class="item"><a class="noUnderline" href="' . $link . '">
+<h3 class="item__name"></h3>
+<figure class="img__container">
+<img class="item__img" src="' . $url . '" alt="' . $name . '">
+</figure>
+<div class="item__info">
+<div class="item--row">
+<p class="item__price">AB ' . $price . ' EUR</p>
+<a class="item__button noUnderline" href="' . $link . '">ANFRAGE</a>
+</div>
+<p class="item__description">' . $description . '</p>
+</div></a>
+</li>';
+            } */
         }
         return $out;
     }

@@ -32,11 +32,18 @@ p {
   grid-area: info--right;
 }
 .map {
-    width: 100%;
+  width: 100%;
 }
 
 @media screen and (max-width: 470px) {
-    p {
-        font-size: 1em;
-      }
+  p {
+    font-size: 1em;
   }
+}
+
+footer {
+  width: 100vw !important;
+}
+.navigation {
+  width: 100vw;
+}

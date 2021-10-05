@@ -13,6 +13,7 @@ $error = false;
 $price = 0;
 $info = "";
 $text = "";
+$userImg = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //print_r($_REQUEST);
     $textarea = $_REQUEST["textarea"];
@@ -62,6 +63,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     //echo $info;
     //echo $price;
+    $target_dir = "imgs/userImgs/";
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+    if ($_FILES["fileToUpload"]["name"] != "") {
+        // Check if image file is a actual image or fake image
+        if (isset($_POST["submit"])) {
+            $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+            if ($check !== false) {
+                echo "File is an image - " . $check["mime"] . ".";
+                $uploadOk = 1;
+            } else {
+                echo "File is not an image.";
+                $uploadOk = 0;
+            }
+        }
+
+        // Check file size
+        if ($_FILES["fileToUpload"]["size"] > 500000) {
+            echo "Sorry, your file is too large.";
+            $uploadOk = 0;
+        }
+
+        // Allow certain file formats
+        if (
+            $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif"
+        ) {
+            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            $uploadOk = 0;
+        }
+
+        // Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+            // if everything is ok, try to upload file
+        } else {
+            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";
+                //$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+            } else {
+                echo "Sorry, there was an error uploading your file.";
+            }
+        }
+        $userImg = "http://vojtikuvworkout.tode.cz/Web/imgs/userImgs/" . $_FILES["fileToUpload"]["name"];
+        //$userImg = realpath("/imgs/userImgs/" . $_FILES["fileToUpload"]["name"]);
+    }
 
     $text = '<body>
     <div class="container">
@@ -87,9 +136,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p>Typ motorky : ' . $motorrad . '</p>
             </div>
         </div>
+        <h2>Sedlo</h2>
         <figure>
             <img src="' . $url . '" width="400" alt="Sedlo">
         </figure>
+        <h2>Fotka zákazníka</h2>
+        <a href="' . $userImg . '">ODKAZ</a>
+        <p>' . $userImg . '</p>
     </div>
 
     <style>
@@ -133,6 +186,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             //$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->SMTPSecure = "tls";            //Enable implicit TLS encryption
             $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set 'SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS'
+            /* if (true) {
+                $mail->AddEmbeddedImage($userImg, 'logo_2u');
+            } */
 
             //Recipients
             $mail->setFrom('rutanmotosedla@volny.cz', 'Mailer');
@@ -140,7 +196,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             //Attachments
             //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-            //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+            //$mail->addAttachment("/imgs/userImgs/" . $_FILES["fileToUpload"]["name"], 'new.jpg');    //Optional name
 
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
@@ -210,7 +266,7 @@ function infoText($ids)
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -230,6 +286,9 @@ function infoText($ids)
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/css/lg-zoom.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/css/lightgallery-core.min.css">
+    <?php
+    include "./php/templates/header.php"
+    ?>
     <title>Rutan Performance Kauf</title>
 </head>
 
@@ -262,6 +321,7 @@ function infoText($ids)
         main div {
             margin-top: 30vh;
         }
+
         img {
             max-width: 200px;
         }

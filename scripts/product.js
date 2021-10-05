@@ -9,6 +9,7 @@ for (let i = 0; i < checkboxes.length; i++) {
         if (!label.checked)
             price -= parseInt(label.dataset.price);
         //console.log(price)
+        document.getElementById("price1").getElementsByTagName("span")[0].innerHTML = price;
         document.getElementById("price0").getElementsByTagName("span")[0].innerHTML = price;
         document.getElementById("price").getElementsByTagName("span")[0].innerHTML = price;
     })
@@ -34,6 +35,9 @@ submit.addEventListener("click", () => {
 function anfrage() {
     let textarea = document.getElementById("textarea").value
     let xhr = new XMLHttpRequest();
+    /*     if (document.getElementById("fileupload").value != "") {
+            uploadFile()
+        } */
     xhr.open("POST", 'anfrage.php', true);
 
     //Send the proper header information along with the request
@@ -43,8 +47,12 @@ function anfrage() {
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             //console.log(this.responseText)
             document.getElementsByTagName("main")[0].classList.add("hidden");
-            document.getElementsByTagName("body")[0].innerHTML += this.responseText;
-            buyPost()
+            document.getElementById("response").innerHTML += this.responseText;
+            //buyPost()
+            if (document.getElementById("fileToUpload").value != "") {
+                img()
+            }
+
             // Request finished. Do processing here.
         }
     }
@@ -74,4 +82,19 @@ function buyPost() {
         let payload = `customization=${JSON.stringify(customization)}&textarea=${textarea1}&id=${id}&name=${name}&surname=${surname}&tel=${tel}&email=${email}`
         xhr.send(payload);
     })
+}
+let priceFloating = document.getElementsByClassName("price__floating")[0]
+window.addEventListener("scroll", () => {
+    priceFloating.style.top = `${window.pageYOffset + 50}px`;
+})
+
+function img() {
+    // Get the last <li> element ("Milk") of <ul> with id="myList2"
+    var itm = document.querySelector("#img");
+
+    // Copy the <li> element and its child nodes
+    var cln = itm.cloneNode(true);
+
+    document.querySelector("#buy > form > fieldset").appendChild(cln)
+    document.querySelector("#buy > #img").style.display = "none"
 }

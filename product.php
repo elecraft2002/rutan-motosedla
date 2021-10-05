@@ -73,7 +73,7 @@ product($conn, $id);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/nav.css">
     <link rel="stylesheet" href="./styles/gallery.css">
@@ -87,6 +87,9 @@ product($conn, $id);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/css/lg-zoom.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/css/lightgallery-core.min.css">
+    <?php
+    include "./php/templates/header.php"
+    ?>
     <title>Rutan Performance Product</title>
 </head>
 
@@ -227,11 +230,19 @@ product($conn, $id);
 
                             <!-- Textarea -->
                             <div class="form-group">
-                                <label class=" control-label" for="textarea">Ich möchte andere Designänderungen
+                                <label class=" control-label" for="textarea"><input type="checkbox"> Ich möchte andere Designänderungen
                                     an diesem Sattel vornehmen</label>
                                 <div class="">
                                     <textarea class="form-control" id="textarea" name="textarea"></textarea>
                                 </div>
+                            </div>
+                            <!-- Photo -->
+                            <div id="img" class="form-group">
+                                <label class=" control-label" for="fileToUpload"><input type="checkbox"> Anpassung im Austausch system <abbr title="Die Anpassungen bieten wir auch mit Umtausch-System. Die Anpassung wird nach Ihrer Vorstellung auf unserem Sitzbank gefertigt und dann tauschen wir mit Ihrer alten Sitzbank um"><i class="fas fa-info-circle"></i></abbr><br>
+
+                                </label><br>
+                                <label class=" control-label" for="textarea">Foto von deinem Motorrad</label>
+                                <input id="fileToUpload" type="file" name="fileToUpload" />
                             </div>
 
                         </fieldset>
@@ -240,11 +251,16 @@ product($conn, $id);
                             </p>
                             <a id="ANFRAGE" class="item__button buy__button noUnderline">ANFRAGE</a>
                         </div>
+                        <div class="price__floating">
+                            <p id="price1"><span><?php echo $price ?></span> EUR</p>
+                        </div>
                     </form>
-
                 </div>
             </div>
+        </div>
+
     </main>
+    <div id="response"></div>
     <?php include __DIR__ . "/php/templates/footer.php" ?>
 </body>
 <script>
